@@ -375,22 +375,23 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"Images/Backgroundpngcopy.png", id:"Backgroundpngcopy"},
-		{src:"Images/bar.png", id:"bar"},
-		{src:"Images/Bar2.png", id:"Bar2"},
-		{src:"Images/Button.png", id:"Button"},
-		{src:"Images/Button_1.png", id:"Button_1"},
-		{src:"Images/Hole.png", id:"Hole"},
-		{src:"Images/howtoplay.png", id:"howtoplay"},
-		{src:"Images/Learnblock.png", id:"Learnblock"},
-		{src:"Images/Note.png", id:"Note"},
-		{src:"Images/note.png", id:"note"},
-		{src:"Images/Note_1.png", id:"Note_1"},
-		{src:"Images/Picture16.png", id:"Picture16"},
-		{src:"Images/text1.png", id:"text1"},
-		{src:"Images/text2.png", id:"text2"},
-		{src:"Images/Text.png", id:"Text"}
-	],
+    {src:"Images/Backgroundpngcopy.png", id:"Backgroundpngcopy"},
+    {src:"Images/bar.png", id:"bar"},
+    {src:"Images/Bar2.png", id:"Bar2"},
+    {src:"Images/Button.png", id:"Button"},
+    {src:"Images/Button_1.png", id:"Button_1"},
+    {src:"Images/Hole.png", id:"Hole"},
+    {src:"Images/howtoplay.png", id:"howtoplay"},
+    {src:"Images/Learnblock.png", id:"Learnblock"},
+    {src:"Images/Note.png", id:"Note"},
+    {src:"Images/note.png", id:"note"},
+    {src:"Images/Note_1.png", id:"Note_1"},
+    {src:"Images/Picture16.png", id:"Picture16"},
+    {src:"Images/text1.png", id:"text1"},
+    {src:"Images/text2.png", id:"text2"},
+    {src:"Images/Text.png", id:"Text"}
+],
+
 	preloads: []
 };
 
