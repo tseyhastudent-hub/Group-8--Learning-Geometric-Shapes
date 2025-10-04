@@ -115,75 +115,6 @@ p.nominalBounds = new cjs.Rectangle(0,0,2868,483);
 p.nominalBounds = new cjs.Rectangle(0,0,4376,2018);
 
 
-(lib.Symbol3 = function(mode,startPosition,loop,reversed) {
-if (loop == null) { loop = true; }
-if (reversed == null) { reversed = false; }
-	var props = new Object();
-	props.mode = mode;
-	props.startPosition = startPosition;
-	props.labels = {};
-	props.loop = loop;
-	props.reversed = reversed;
-	cjs.MovieClip.apply(this,[props]);
-
-	// Layer_1
-	this.instance = new lib.note();
-	this.instance.setTransform(0,0,0.1918,0.186);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,1000.2,578.2);
-
-
-(lib.Symbol2 = function(mode,startPosition,loop,reversed) {
-if (loop == null) { loop = true; }
-if (reversed == null) { reversed = false; }
-	var props = new Object();
-	props.mode = mode;
-	props.startPosition = startPosition;
-	props.labels = {};
-	props.loop = loop;
-	props.reversed = reversed;
-	cjs.MovieClip.apply(this,[props]);
-
-	// Layer_1
-	this.instance = new lib.Text();
-	this.instance.setTransform(0,0,0.14,0.2259);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,612.5,455.9);
-
-
-(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
-if (loop == null) { loop = true; }
-if (reversed == null) { reversed = false; }
-	var props = new Object();
-	props.mode = mode;
-	props.startPosition = startPosition;
-	props.labels = {};
-	props.loop = loop;
-	props.reversed = reversed;
-	cjs.MovieClip.apply(this,[props]);
-
-	// Layer_1
-	this.instance = new lib.Backgroundpngcopy();
-	this.instance.setTransform(0,0,0.1874,0.1078);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
-
-	this._renderFirstFrame();
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,1535.4,883.5);
-
-
 (lib.LearnBtnSymbol = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -247,8 +178,8 @@ if (reversed == null) { reversed = false; }
 	this.frame_0 = function() {
 		this.stop();
 		
-		// --- BUTTON CLICK LOGIC ---
-		// NOTE: 'this.learnBtn' and 'this.exerciseBtn' must match the instance names in your Animate file.
+        // --- IMPORTANT: BUTTON CLICK LOGIC ---
+		// 'this.learnBtn' and 'this.exerciseBtn' must match the instance names in your Animate file.
 		
 		// Makes the "Learn" button go to Learn.html
 		this.learnBtn.addEventListener("click", function() {
@@ -264,29 +195,29 @@ if (reversed == null) { reversed = false; }
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
-	// Buttons
+	// Layer: Buttons
 	this.learnBtn = new lib.LearnBtnSymbol();
 	this.learnBtn.name = "learnBtn";
-	this.learnBtn.setTransform(450, 450, 1, 1, 0, 0, 0, 141.7, 77.5); // Adjusted position
+	this.learnBtn.setTransform(400, 450, 1, 1, 0, 0, 0, 141.7, 77.5);
 	new cjs.ButtonHelper(this.learnBtn, 0, 1, 1);
 
 	this.exerciseBtn = new lib.ExerciseBtnSymbol();
 	this.exerciseBtn.name = "exerciseBtn";
-	this.exerciseBtn.setTransform(800, 450, 1, 1, 0, 0, 0, 113.3, 69); // Adjusted position
+	this.exerciseBtn.setTransform(850, 450, 1, 1, 0, 0, 0, 113.3, 69);
 	new cjs.ButtonHelper(this.exerciseBtn, 0, 1, 1);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.learnBtn}, {t:this.exerciseBtn}]}).wait(1));
 
-	// Background
-	this.instance = new lib.Symbol1("synched",0);
-	this.instance.setTransform(640, 360, 0.8339, 0.8149, 0, 0, 0, 767.8, 441.9);
-
+	// Layer: Background
+	this.instance = new lib.Backgroundpngcopy();
+    this.instance.setTransform(640,360,0.156,0.0879,0,0,0,4096,4096);
+    
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(640,360,640,360);
+p.nominalBounds = new cjs.Rectangle(640,360,1280,720);
 // library properties:
 lib.properties = {
 	id: 'FA56DE08ED8E3640BCDD53EA5B715ED8',
