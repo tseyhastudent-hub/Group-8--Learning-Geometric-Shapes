@@ -184,7 +184,7 @@ if (reversed == null) { reversed = false; }
 p.nominalBounds = new cjs.Rectangle(0,0,1535.4,883.5);
 
 
-(lib.Startbtn = function(mode,startPosition,loop,reversed) {
+(lib.LearnBtnSymbol = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -207,7 +207,7 @@ if (reversed == null) { reversed = false; }
 p.nominalBounds = new cjs.Rectangle(0,0,283.5,155.1);
 
 
-(lib.Nextbtn = function(mode,startPosition,loop,reversed) {
+(lib.ExerciseBtnSymbol = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
 	var props = new Object();
@@ -237,135 +237,56 @@ if (reversed == null) { reversed = false; }
 	var props = new Object();
 	props.mode = mode;
 	props.startPosition = startPosition;
-	props.labels = {gamePage:20,thirdPage:39};
+	props.labels = {};
 	props.loop = loop;
 	props.reversed = reversed;
 	cjs.MovieClip.apply(this,[props]);
 
-	this.actionFrames = [0,20];
+	this.actionFrames = [0];
 	// timeline functions:
 	this.frame_0 = function() {
-		this.stop(); 
+		this.stop();
 		
-		createjs.Sound.registerSound("sounds/clicksound.mp3", "clicksound");
+		// --- BUTTON CLICK LOGIC ---
+		// NOTE: 'this.learnBtn' and 'this.exerciseBtn' must match the instance names in your Animate file.
 		
-		function clickHandler() {
-		    createjs.Sound.play("clicksound");
-		    this.gotoAndStop("gamePage"); 
-		}
-		this.startBtn.addEventListener("click", clickHandler.bind(this));
-	}
-	this.frame_20 = function() {
-		this.stop(); 
-		
-		createjs.Sound.registerSound("sounds/clicksound.mp3", "clicksound");
-		
-		function clickHandler() {
-		    createjs.Sound.play("clicksound");
-		    this.gotoAndStop("thirdPage"); 
-		}
-		this.nextBtn.addEventListener("click", clickHandler.bind(this));
+		// Makes the "Learn" button go to Learn.html
+		this.learnBtn.addEventListener("click", function() {
+			window.location.href = "Learn.html";
+		});
+	
+		// Makes the "Exercise" button go to Matching.html
+		this.exerciseBtn.addEventListener("click", function() {
+			window.location.href = "Matching.html";
+		});
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(20).call(this.frame_20).wait(40));
-
-	// letter
-	this.instance = new lib.Symbol2("synched",0);
-	this.instance.setTransform(483.2,410.9,1,1,0,0,0,306.2,227.9);
-
-	this.instance_1 = new lib.text2();
-	this.instance_1.setTransform(539,438,0.2871,0.2445);
-
-	this.instance_2 = new lib.text1();
-	this.instance_2.setTransform(539,197,0.2473,0.4051);
-
-	this.instance_3 = new lib.howtoplay();
-	this.instance_3.setTransform(7,140,0.1802,0.1571);
-
-	this.instance_4 = new lib.Bar2();
-	this.instance_4.setTransform(792,89,0.2195,0.1914);
-
-	this.instance_5 = new lib.Bar2();
-	this.instance_5.setTransform(710,89,0.2195,0.1914);
-
-	this.instance_6 = new lib.Bar2();
-	this.instance_6.setTransform(631,89,0.2195,0.1914);
-
-	this.instance_7 = new lib.Bar2();
-	this.instance_7.setTransform(551,89,0.2195,0.1914);
-
-	this.instance_8 = new lib.Bar2();
-	this.instance_8.setTransform(475,89,0.2195,0.1914);
-
-	this.instance_9 = new lib.Bar2();
-	this.instance_9.setTransform(399,89,0.2195,0.1914);
-
-	this.instance_10 = new lib.Bar2();
-	this.instance_10.setTransform(322,89,0.2195,0.1914);
-
-	this.instance_11 = new lib.Bar2();
-	this.instance_11.setTransform(246,89,0.2195,0.1914);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance}]}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},19).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]},1).to({state:[{t:this.instance_11},{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4}]},19).wait(21));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
 	// Buttons
-	this.startBtn = new lib.Startbtn();
-	this.startBtn.name = "startBtn";
-	this.startBtn.setTransform(895.7,329.5,1,1,0,0,0,141.7,77.5);
-	new cjs.ButtonHelper(this.startBtn, 0, 1, 1);
+	this.learnBtn = new lib.LearnBtnSymbol();
+	this.learnBtn.name = "learnBtn";
+	this.learnBtn.setTransform(450, 450, 1, 1, 0, 0, 0, 141.7, 77.5); // Adjusted position
+	new cjs.ButtonHelper(this.learnBtn, 0, 1, 1);
 
-	this.nextBtn = new lib.Nextbtn();
-	this.nextBtn.name = "nextBtn";
-	this.nextBtn.setTransform(1134.3,635,1,1,0,0,0,113.3,69);
-	new cjs.ButtonHelper(this.nextBtn, 0, 1, 1);
+	this.exerciseBtn = new lib.ExerciseBtnSymbol();
+	this.exerciseBtn.name = "exerciseBtn";
+	this.exerciseBtn.setTransform(800, 450, 1, 1, 0, 0, 0, 113.3, 69); // Adjusted position
+	new cjs.ButtonHelper(this.exerciseBtn, 0, 1, 1);
 
-	this.instance_12 = new lib.Hole();
-	this.instance_12.setTransform(443,451,0.2988,0.2504);
-
-	this.instance_13 = new lib.Hole();
-	this.instance_13.setTransform(443,221,0.2988,0.2504);
-
-	this.instance_14 = new lib.Note_1();
-	this.instance_14.setTransform(437,150,0.2637,0.2353);
-
-	this.instance_15 = new lib.Learnblock();
-	this.instance_15.setTransform(322,268,0.2194,0.2374);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.startBtn}]}).to({state:[{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.nextBtn}]},19).to({state:[{t:this.instance_15}]},20).wait(21));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.learnBtn}, {t:this.exerciseBtn}]}).wait(1));
 
 	// Background
-	this.instance_16 = new lib.Symbol3("synched",0);
-	this.instance_16.setTransform(630.1,339.1,1,1,0,0,0,500.1,289.1);
+	this.instance = new lib.Symbol1("synched",0);
+	this.instance.setTransform(640, 360, 0.8339, 0.8149, 0, 0, 0, 767.8, 441.9);
 
-	this.background = new lib.Symbol1("synched",0);
-	this.background.name = "background";
-	this.background.setTransform(647.7,368.8,1,1,0,0,0,767.7,441.8);
-
-	this.instance_17 = new lib.Picture16();
-	this.instance_17.setTransform(690,265,0.2115,0.2388);
-
-	this.instance_18 = new lib.Bar2();
-	this.instance_18.setTransform(937,89,0.2195,0.1914);
-
-	this.instance_19 = new lib.Bar2();
-	this.instance_19.setTransform(1000,89,0.2195,0.1914);
-
-	this.instance_20 = new lib.Bar2();
-	this.instance_20.setTransform(871,89,0.2195,0.1914);
-
-	this.instance_21 = new lib.bar();
-	this.instance_21.setTransform(229,211.5,0.1572,0.1741,0,180,0);
-
-	this.instance_22 = new lib.Note();
-	this.instance_22.setTransform(229,105,0.1562,0.1717);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.background,p:{y:368.8,x:647.7}},{t:this.instance_16}]}).to({state:[{t:this.background,p:{y:373.8,x:647.7}}]},19).to({state:[{t:this.background,p:{y:373.8,x:605.5}},{t:this.instance_22},{t:this.instance_21},{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17}]},20).wait(21));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new lib.AnMovieClip();
-p.nominalBounds = new cjs.Rectangle(477.8,287,937.6000000000001,528.5);
+p.nominalBounds = new cjs.Rectangle(640,360,640,360);
 // library properties:
 lib.properties = {
 	id: 'FA56DE08ED8E3640BCDD53EA5B715ED8',
@@ -375,23 +296,22 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-    {src:"Images/Backgroundpngcopy.png", id:"Backgroundpngcopy"},
-    {src:"Images/bar.png", id:"bar"},
-    {src:"Images/Bar2.png", id:"Bar2"},
-    {src:"Images/Button.png", id:"Button"},
-    {src:"Images/Button_1.png", id:"Button_1"},
-    {src:"Images/Hole.png", id:"Hole"},
-    {src:"Images/howtoplay.png", id:"howtoplay"},
-    {src:"Images/Learnblock.png", id:"Learnblock"},
-    {src:"Images/Note.png", id:"Note"},
-    {src:"Images/note.png", id:"note"},
-    {src:"Images/Note_1.png", id:"Note_1"},
-    {src:"Images/Picture16.png", id:"Picture16"},
-    {src:"Images/text1.png", id:"text1"},
-    {src:"Images/text2.png", id:"text2"},
-    {src:"Images/Text.png", id:"Text"}
-],
-
+		{src:"Images/Backgroundpngcopy.png", id:"Backgroundpngcopy"},
+		{src:"Images/bar.png", id:"bar"},
+		{src:"Images/Bar2.png", id:"Bar2"},
+		{src:"Images/Button.png", id:"Button"},
+		{src:"Images/Button_1.png", id:"Button_1"},
+		{src:"Images/Hole.png", id:"Hole"},
+		{src:"Images/howtoplay.png", id:"howtoplay"},
+		{src:"Images/Learnblock.png", id:"Learnblock"},
+		{src:"Images/Note.png", id:"Note"},
+		{src:"Images/note.png", id:"note"},
+		{src:"Images/Note_1.png", id:"Note_1"},
+		{src:"Images/Picture16.png", id:"Picture16"},
+		{src:"Images/text1.png", id:"text1"},
+		{src:"Images/text2.png", id:"text2"},
+		{src:"Images/Text.png", id:"Text"}
+	],
 	preloads: []
 };
 
@@ -511,3 +431,4 @@ an.handleFilterCache = function(event) {
 
 })(createjs = createjs||{}, AdobeAn = AdobeAn||{});
 var createjs, AdobeAn;
+
